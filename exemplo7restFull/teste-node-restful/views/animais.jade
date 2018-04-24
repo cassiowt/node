@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1=title
+
+    h2=title
+    ul
+      for a in animais
+        li=a.dono
+      else
+        li sorry, no Animais!
+

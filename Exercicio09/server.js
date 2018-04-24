@@ -91,7 +91,7 @@ app.get('/removeDono/:id', function(req, res) {
             console.log('Erro: ', err);
             msg = 'Erro: ' + err;
             return res.end(msg);
-        })
+        }
 
         res.end(" Removido Dono " + dono.nome);
     });

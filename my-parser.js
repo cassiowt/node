@@ -10,6 +10,7 @@ fs.readFile('example-log.txt', function ( err, logData ) {
 
     // logData é um Buffer, converta para string
     var text = logData.toString();
+    //console.log(text)
 
     var results = {};
 

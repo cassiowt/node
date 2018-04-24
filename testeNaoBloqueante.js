@@ -1,6 +1,6 @@
 var frase;
 
-carregaFrase = function (callback) {
+var carregaFrase = function (callback) {
     setTimeout(function() {
         //Simula leitura da frase no banco de dados.
         frase = "Minha frase obstrutiva";
@@ -8,7 +8,7 @@ carregaFrase = function (callback) {
     }, 3000)
 }
 
-imprimeFrase = function () {
+var imprimeFrase = function () {
     console.log(frase);
 }
 

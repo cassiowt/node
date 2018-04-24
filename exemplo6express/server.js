@@ -1,14 +1,24 @@
 var express = require('express');
+var morgan = require('morgan')
 var bodyParser = require('body-parser');
 
-var port = 3005
+var port = 8080
 var ser = '127.0.0.1'
 
-app = express();
+var app = express();
 app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
+app.use(morgan(function (tokens, req, res) {
+    return [
+        tokens.method(req, res),
+        tokens.url(req, res),
+        tokens.status(req, res),
+        tokens.res(req, res, 'content-length'), '-',
+        tokens['response-time'](req, res), 'ms'
+    ].join(' ')
+}))
 
-app.get('/', function(req, res) {
+app.get('/ola', function(req, res) {
     res.send('Ola Vivente');
 });
 
@@ -28,3 +38,11 @@ app.get('/ab*cd', function(req, res) {
 
 console.log(" Executando em " + ser + ":" + port);
 app.listen(port);
+
+
+
+
+
+
+
+
